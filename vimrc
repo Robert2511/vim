@@ -52,13 +52,13 @@ nnoremap <F3> :noh<cr>
 set showmatch
 
 " No error sounds
-" set noerrorbells
-" set novisualbell
-" set t_vb=
-" set tm=500
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
 
 " Blink cursor on error instead of beeping (grr)
-set visualbell
+" set visualbell
 
 " remap mapleader
 let mapleader="\<Space>"
@@ -66,9 +66,19 @@ let mapleader="\<Space>"
 " Don't redraw while executing macros (good performance config)
 set lazyredraw
 
+" Set wrapping of lines
+set wrap
+
 " Pressing ,ss will toggle and untoggle spell checking
 map <leader>ss :setlocal spell!<cr>
 
+" Map the F5 key to run a Python script inside Vim.
+" I map F5 to a chain of commands here.
+" :w saves the file.
+" <CR> (carriage return) is like pressing the enter key.
+" !clear runs the external clear screen command.
+" !python % executes the current file with Python.
+nnoremap <f5> :w <CR>:!clear <CR>:!python % <CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " ==> Colors and Themes
@@ -118,7 +128,7 @@ autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
 nnoremap <C-n> :NERDTreeToggle<cr> 
 
 " Ignore some file types
-let NERDTreeIgnore=['\.pyc$', '\~$']
+let NERDTreeIgnore=['\.git$', '\.jpg$', '\.mp4$', '\.ogg$', '\.iso$', '\.pdf$', '\.pyc$', '\.odt$', '\.png$', '\.gif$', '\.db$']
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " ==> Tabs, indentation, and encoding
@@ -169,6 +179,11 @@ map <leader>tc :tabclose<cr>
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
+
+" Pressing the letter o will open a new line below the current one.
+" Exit insert mode after creating a new line above or below the current line.
+nnoremap o o<esc>
+nnoremap O O<esc>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""
