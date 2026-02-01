@@ -1,0 +1,8 @@
+git clone --depth 1 https://github.com/morhetz/gruvbox.git ~/.vim/pack/colors/opt/gruvbox
+git clone --depth 1 https://github.com/sainnhe/everforest.git ~/.vim/pack/colors/opt/everforest
+git clone --depth 1 https://github.com/sainnhe/gruvbox-material.git ~/.vim/pack/colors/opt/gruxbox-material
+git clone --depth 1 https://github.com/joshdick/onedark.vim.git ~/.vim/pack/colors/opt/onedark
+git clone https://github.com/preservim/nerdtree.git ~/.vim/pack/vendor/start/nerdtree
+git clone https://github.com/itchyny/lightline.vim ~/.vim/pack/plugins/start/lightline
+git clone https://github.com/vimwiki/vimwiki.git ~/.vim/pack/plugins/start/vimwiki
+git clone https://tpope.io/vim/fugitive.git ~/.vim/pack/plugins/start/fugitive
